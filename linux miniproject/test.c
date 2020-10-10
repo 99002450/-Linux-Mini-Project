@@ -13,12 +13,13 @@ typedef struct unit
 }unit;
 void selectionSort(int l,int r)              //function 1
 {
-	int index=l;
-	int temp;
+	//int index=l;
+	//int temp;
 	int i,j;
 	for(i=l;i<r;i++)
 	{
 		int index=i;
+		int temp;
 		for(j=i+1;j<=r;j++)
 		{
 			if(arr[j]<arr[index])
