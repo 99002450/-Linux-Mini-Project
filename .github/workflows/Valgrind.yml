@@ -18,6 +18,6 @@ jobs:
         sudo apt-get -y install valgrind
         sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
     - name: valgrindcheck  
-      run: chmod a+x a.out
+      run: chmod a+x all.out
     - name: valgrindcheck1  
-      run: valgrind ./a.out
+      run: valgrind ./all.out
