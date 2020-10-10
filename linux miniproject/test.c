@@ -11,7 +11,7 @@ typedef struct unit
 	int low;
 	int high;
 }unit;
-void selectionSort(int l,int r)
+void selectionSort(int l,int r)              //function 1
 {
 	int index=l;
 	int temp;
@@ -32,8 +32,8 @@ void selectionSort(int l,int r)
 	}
 	return;
 }
-void merge(int l, int m, int r)
-{
+void merge(int l, int m, int r)            // function 2
+{ 
 
   int n1=m-l+1;
   int n2=r-m;
@@ -103,7 +103,7 @@ void * mergeSort(void * args)
 			pthread_create(&rightchild,NULL,mergeSort,(void *)&right);
 			pthread_join(leftchild,NULL);
 			pthread_join(rightchild,NULL);
-      merge(l, mid, r);
+      merge(l, mid, r);      //function call 2
 			pthread_exit(NULL);
     }
 	}
