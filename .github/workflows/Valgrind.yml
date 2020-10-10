@@ -21,4 +21,4 @@ jobs:
     - name: valgrind check
       run: |
         g++ test.c -lpthread -c 
-        valgrind ./all.out
+        valgrind chmod 777 ./all.out
