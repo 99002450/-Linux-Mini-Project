@@ -1,4 +1,3 @@
-
 name: Valgrind
 
 on:
@@ -18,7 +17,7 @@ jobs:
       run: |
         sudo apt-get -y install valgrind
         sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
-    - name: valgrind check
-      run: |
-        gcc test.c -lpthread -c
-        valgrind ./all.out
+    - name: valgrindcheck  
+      run: chmod a+x all.out
+    - name: valgrindcheck1  
+      run: valgrind ./all.out
