@@ -1,24 +1,131 @@
-
 name: Valgrind
 
+
+
+
+
+ 
+
+
+
+
+
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+
+
+
+
+
+push:
+
+
+
+
+
+branches: [ master ]
+
+
+
+
+
+pull_request:
+
+
+
+
+
+branches: [ master ]
+
+
+
+
+
+ 
+
+
+
+
 
 jobs:
-  build:
 
-    runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: apt install dependency
-      run: |
-        sudo apt-get -y install valgrind
-        sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
-    - name: make test
-      run: |
-        make test -C Linux-Mini-Project/linux miniproject
-        valgrind  ./Linux-Mini-Project/linux miniproject/a.out 
+
+
+
+build:
+
+
+
+
+
+ 
+
+
+
+
+
+runs-on: ubuntu-latest
+
+
+
+
+
+ 
+
+
+
+
+
+steps:
+
+
+
+
+
+- uses: actions/checkout@v2
+
+
+
+
+
+- name: apt install dependency
+
+
+
+
+
+run: |
+
+
+
+
+
+sudo apt-get -y install valgrind
+
+
+
+
+
+sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev
+
+
+
+
+
+- name: make test
+
+
+
+
+
+run: |
+
+
+
+
+
+gcc test.c -pthread -c
+
+
+
+ valgrind ./a.out
